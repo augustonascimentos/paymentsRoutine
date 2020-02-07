@@ -130,3 +130,15 @@ dmypy.json
 
 # IDE
 .idea
+.DS_Store
+app/.DS_Store
+
+# Others
+venv
+__pycharm__
+.pytest_cache
+assets
+htmlcov
+report.html
+*.pyc
+venvpython3
