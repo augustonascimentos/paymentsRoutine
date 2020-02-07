@@ -15,7 +15,6 @@ def files_on_tree(root_path):
 
 
 def Routes(app):
-    files = []
     path = os.path.dirname(__file__)
     files = files_on_tree(path)
     files = [file.replace(os.path.dirname(__file__),

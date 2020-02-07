@@ -24,6 +24,8 @@ install_requires = [
     'flask-cors==3.0.8',
     'requests==2.22.0',
     'boto3==1.10.27',
+    'python-dotenv==0.10.3',
+    'marshmallow==2.20.2'
 ]
 
 
