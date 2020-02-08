@@ -1,2 +1,8 @@
 version: "3.7"
 services:
+  database:
+    build:
+      context: ./src/database
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
