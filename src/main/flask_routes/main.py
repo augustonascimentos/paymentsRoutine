@@ -1,8 +1,6 @@
 import logging
 from flask import jsonify
 from src.main.resources.ErrorResponse import ErrorResponse
-from src.main.repositories.OperationTableRepository import OperationTableRepository
-from src.main.resources.CreateTables import CreateTables
 
 
 def Main(app):

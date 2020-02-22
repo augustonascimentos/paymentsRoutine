@@ -3,7 +3,7 @@ from boto3.dynamodb.conditions import Attr
 from src.main.resources.Storage import storage
 
 
-class OperationTableRepository:
+class AccountTableRepository:
 
     def __init__(self):
         self.storage = storage(os.getenv('DYNAMO_TABLE_ACCOUNTS'))
