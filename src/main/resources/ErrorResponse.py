@@ -1,4 +1,5 @@
 from src.main.schemas.ErrorSchema import ErrorSchema
+from src.main.models import NotFoundException, ForbiddenAccessException
 
 
 class ErrorResponse:
@@ -10,6 +11,21 @@ class ErrorResponse:
             'error': {
                 'status': 'Not found',
                 'status_code': 404,
+                'type': type,
+                'category': category,
+                'message': message
+            }
+        })
+
+        return body_response.data
+
+    @staticmethod
+    def forbidden(message, type, category='payments'):
+        schema = ErrorSchema()
+        body_response = schema.load({
+            'error': {
+                'status': 'Forbidden',
+                'status_code': 403,
                 'type': type,
                 'category': category,
                 'message': message
@@ -38,7 +54,8 @@ class ErrorResponse:
         typeOfError = type(error)
 
         errosDict = {
-            FileNotFoundError: ErrorResponse.not_found,
+            NotFoundException: ErrorResponse.not_found,
+            ForbiddenAccessException: ErrorResponse.forbidden
         }
 
         if typeOfError in errosDict:
