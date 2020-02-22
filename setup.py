@@ -25,7 +25,7 @@ install_requires = [
     'requests==2.22.0',
     'boto3==1.10.27',
     'python-dotenv==0.10.3',
-    'marshmallow==2.20.2',
+    'marshmallow==3.5.0',
     'pytest==3.10.1'
 ]
 
