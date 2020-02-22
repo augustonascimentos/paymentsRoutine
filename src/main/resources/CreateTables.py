@@ -1,5 +1,5 @@
 import os
-from src.main.resources.Storage import storageResource, storage, storageClient
+from src.main.resources.Storage import storageResource, storageClient
 
 tableName = os.getenv('DYNAMO_TABLE_OPERATION_TYPES')
 
@@ -7,7 +7,7 @@ tableName = os.getenv('DYNAMO_TABLE_OPERATION_TYPES')
 class CreateTables:
 
     @staticmethod
-    def createOperationTypesTables():
+    def createOperationTypesTable():
 
         response = storageClient().list_tables()
 
