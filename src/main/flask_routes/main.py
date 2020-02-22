@@ -1,13 +1,15 @@
 import logging
 from flask import jsonify
 from src.main.resources.ErrorResponse import ErrorResponse
+from src.main.repositories.OperationTableRepository import OperationTableRepository
 
 
 def Main(app):
     @app.route('/v1/accounts/<string:account_id>', methods=['PATCH'])
     def account(account_id):
         try:
-            return jsonify(), 200
+            response = OperationTableRepository.operationTablePopulate
+            return jsonify(response), 200
 
         except Exception as e:
             logging.warning('Error: {}'.format(str(e)))
