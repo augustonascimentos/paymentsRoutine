@@ -1,13 +1,14 @@
 import logging
 from flask import jsonify
 from src.main.resources.ErrorResponse import ErrorResponse
+from src.main.resources.DatabaseInitialize import Initialize
 
 
 def Main(app):
     @app.route('/v1/accounts/<string:account_id>', methods=['PATCH'])
     def account(account_id):
         try:
-
+            Initialize()
             return jsonify(), 200
 
         except Exception as e:
